@@ -10,9 +10,8 @@
   <DefaultLocale>es-ES</DefaultLocale>
   <DisplayName DefaultValue="AddNumber"/>
   <Description DefaultValue="Numerar asunto con PPP-YY-NNN"/>
-  <!-- 👇 Cambia BASE_URL por tu URL HTTPS pública (sin barra final) -->
-  <IconUrl DefaultValue="https://BASE_URL/assets/icon-32.png"/>
-  <SupportUrl DefaultValue="https://BASE_URL/"/>
+  <IconUrl DefaultValue="https://iker1771.github.io/OfficeAddIns/AddNumber/assets/icon-32.png"/>
+  <SupportUrl DefaultValue="https://iker1771.github.io/OfficeAddIns/AddNumber/"/>
 
   <Hosts>
     <Host Name="Mailbox"/>
@@ -90,12 +89,12 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="res.icon16" DefaultValue="https://BASE_URL/assets/icon-16.png"/>
-        <bt:Image id="res.icon32" DefaultValue="https://BASE_URL/assets/icon-32.png"/>
+        <bt:Image id="res.icon16" DefaultValue="https://iker1771.github.io/OfficeAddIns/AddNumber/assets/icon-16.png"/>
+        <bt:Image id="res.icon32" DefaultValue="https://iker1771.github.io/OfficeAddIns/AddNumber/assets/icon-32.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="res.taskpane.url"  DefaultValue="https://BASE_URL/index.html"/>
-        <bt:Url id="res.functions.url"  DefaultValue="https://BASE_URL/functions.js"/>
+        <bt:Url id="res.taskpane.url"  DefaultValue="https://iker1771.github.io/OfficeAddIns/AddNumber/index.html"/>
+        <bt:Url id="res.functions.url"  DefaultValue="https://iker1771.github.io/OfficeAddIns/AddNumber/functions.js"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="res.title" DefaultValue="Numerar en lote"/>
