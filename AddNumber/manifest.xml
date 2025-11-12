@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="MailApp">
+  <Id>f3b9d5b1-4c7a-4f5e-9f3b-00000000ADNN</Id>
+  <Version>1.0.0.1</Version>
+  <ProviderName>TuEmpresa</ProviderName>
+  <DefaultLocale>es-ES</DefaultLocale>
+  <DisplayName DefaultValue="AddNumber"/>
+  <Description DefaultValue="Numerar asunto con PPP-YY-NNN"/>
+  <!-- 👇 Cambia BASE_URL por tu URL HTTPS pública (sin barra final) -->
+  <IconUrl DefaultValue="https://BASE_URL/assets/icon-32.png"/>
+  <SupportUrl DefaultValue="https://BASE_URL/"/>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets DefaultMinVersion="1.13">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemRead"/>
+    <Form xsi:type="ItemEdit"/>
+  </FormSettings>
+
+  <Permissions>ReadWriteItem</Permissions>
+
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+
+  <VersionOverrides xsi:type="ov:VersionOverridesV1_1">
+    <Hosts>
+      <Host xsi:type="Mail">
+        <DesktopFormFactor>
+
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <PrimaryCommandSurface>
+              <Group id="grp.addnumber.read" label="Casos">
+                <Control xsi:type="Button" id="btn.openpane.read" label="Numerar en lote">
+                  <Icon>
+                    <bt:Image size="16" resid="res.icon16"/>
+                    <bt:Image size="32" resid="res.icon32"/>
+                  </Icon>
+                  <Supertip>
+                    <Title resid="res.title"/>
+                    <Description resid="res.desc"/>
+                  </Supertip>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="res.taskpane.url"/>
+                    <TaskpaneId>Taskpane.AddNumber</TaskpaneId>
+                  </Action>
+                </Control>
+              </Group>
+            </PrimaryCommandSurface>
+          </ExtensionPoint>
+
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+            <PrimaryCommandSurface>
+              <Group id="grp.addnumber.compose" label="Casos">
+                <Control xsi:type="Button" id="btn.openpane.compose" label="Numerar en lote">
+                  <Icon>
+                    <bt:Image size="16" resid="res.icon16"/>
+                    <bt:Image size="32" resid="res.icon32"/>
+                  </Icon>
+                  <Supertip>
+                    <Title resid="res.title"/>
+                    <Description resid="res.desc"/>
+                  </Supertip>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="res.taskpane.url"/>
+                    <TaskpaneId>Taskpane.AddNumber</TaskpaneId>
+                  </Action>
+                </Control>
+              </Group>
+            </PrimaryCommandSurface>
+          </ExtensionPoint>
+
+          <FunctionFile resid="res.functions.url"/>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="res.icon16" DefaultValue="https://BASE_URL/assets/icon-16.png"/>
+        <bt:Image id="res.icon32" DefaultValue="https://BASE_URL/assets/icon-32.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="res.taskpane.url"  DefaultValue="https://BASE_URL/index.html"/>
+        <bt:Url id="res.functions.url"  DefaultValue="https://BASE_URL/functions.js"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="res.title" DefaultValue="Numerar en lote"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="res.desc" DefaultValue="Añade [PPP-YY-NNN] al asunto. MVP: mensaje en composición."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>AddNumber</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://appsforoffice.microsoft.com; style-src 'self' 'unsafe-inline'; script-src 'self' https://appsforoffice.microsoft.com 'unsafe-inline' 'unsafe-eval'; connect-src 'self'; img-src 'self' data:;">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <style>
+    body{font-family:system-ui,Segoe UI,Arial,sans-serif;margin:16px}
+    h1{font-size:16px;margin:0 0 12px}
+    label{display:block;margin:8px 0 4px}
+    input{width:100%;padding:8px;border:1px solid #ddd;border-radius:8px}
+    button{margin-top:12px;padding:10px 14px;border-radius:10px;border:1px solid #ddd;cursor:pointer}
+    .muted{color:#666;font-size:12px;margin-top:6px}
+    .ok{color:green}.warn{color:#b35600}.err{color:#b00020}
+  </style>
+</head>
+<body>
+  <h1>Numerar asunto (MVP)</h1>
+
+  <label>PPP-YY (ej. 123-25)</label>
+  <input id="pppyy" placeholder="123-25" />
+
+  <label>NNN (000–999)</label>
+  <input id="nnn" placeholder="001" />
+
+  <button id="applyCurrent">Aplicar al mensaje actual (compose)</button>
+  <div id="msg" class="muted"></div>
+
+  <p class="muted">
+    Nota: Este MVP funciona en <b>modo composición</b>. La numeración por carpeta y en lote se añadirá con Graph.
+  </p>
+
+  <script src="./pane.js"></script>
+</body>
+</html>
